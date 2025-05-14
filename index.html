@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Site informativo sobre cibersegurança, ransomware e extorsão digital. Proteja-se contra ameaças virtuais com informações atualizadas e recursos gratuitos.">
+    <meta name="keywords"
+        content="Cibersegurança, Ransomware, Extorsão Digital, Phishing, Segurança da Informação, Proteção de Dados, Ataques Cibernéticos">
+    <meta name="author" content="Equipe de Cibersegurança">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Cibersegurança: Ransomware e Extorsão Digital">
+    <meta property="og:description"
+        content="Informações e recursos para proteção contra ransomware e extorsão digital.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ciberseguranca-educacional.com.br">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' https: data:;">
+    <title>Cibersegurança: Ransomware e Extorsão Digital</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3208/3208742.png" type="image/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/floating-form.css" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0a0a23">
+</head>
+
+<body>
+    <!-- Skip Links -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header role="banner">
+        <div class="header-container">
+            <div class="logo-titulo">
+                <img src="https://cdn-icons-png.flaticon.com/512/3208/3208742.png" alt="Logo CiberSec - Ícone de escudo de segurança">
+                <span>CiberSec</span>
+            </div>
+            <button class="mobile-menu" onclick="toggleMenu()" aria-label="Menu principal" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <nav class="menu" role="navigation" aria-label="Menu principal">
+                <button onclick="location.href='#inicio'">Início</button>
+                <div class="dropdown">
+                    <button class="dropbtn">Menu </span></button>
+                    <div class="dropdown-content">
+                        <a href="#conceito">Conceito</a>
+                        <a href="#casos">Casos reais</a>
+                        <a href="#prevencao">Prevenção</a>
+                    </div>
+                </div>
+                <button onclick="location.href='#instituicao'">Instituição</button>
+                <button onclick="location.href='#contato'">Contato</button>
+                <button onclick="location.href='#campus'">Sobre</button>
+                <!-- Recursos dropdown -->
+                <div class="dropdown">
+                    <button class="dropbtn">Recursos </span></button>
+                    <div class="dropdown-content">
+                        <a href="#ferramentas">Ferramentas</a>
+                        <a href="#downloads">Downloads</a>
+                        <a href="#checklist">Checklist de Segurança</a>
+                    </div>
+                </div>
+                <button onclick="location.href='#faq'">FAQ</button>
+
+                <button id="theme-toggle" onclick="toggleDarkMode()" class="theme-button">🌙</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero-slider" id="inicio" role="region" aria-label="Carrossel de destaques">
+        <!-- Slide 1 -->
+        <div class="slides" role="group" aria-label="Slide 1 de 2" itemscope itemtype="http://schema.org/ImageObject">
+            <img src="img/ransomware.jpg"
+                alt="Imagem ilustrativa de cibersegurança mostrando um escudo protegendo dados digitais"
+                loading="lazy"
+                itemprop="contentUrl">
+            <div class="hero-text">
+                <h2>Proteja-se contra ameaças digitais</h2>
+                <p>Conheça as estratégias essenciais para manter seus dados seguros contra ataques cibernéticos.</p>
+                <a href="#prevencao" class="hero-btn">Saiba como se proteger</a>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slides" role="group" aria-label="Slide 2 de 2" itemscope itemtype="http://schema.org/ImageObject">
+            <img src="img/campusfb.jpg" 
+                alt="Vista aérea do Campus de Francisco Beltrão"
+                loading="lazy"
+                itemprop="contentUrl">
+            <div class="hero-text">
+                <h2>Campus de Francisco Beltrão</h2>
+                <p>Localizado na Av. Júlio Assis Cavalheiro, 2000, no Centro de Francisco Beltrão/PR.</p>
+                <a href="#campus" class="hero-btn">Saiba mais sobre nossa universidade e grupo</a>
+            </div>
+        </div>
+        <div class="dots-container" role="tablist">
+            <span class="dot" onclick="currentSlide(1)" role="tab" aria-label="Ir para o slide 1" aria-selected="true"></span>
+            <span class="dot" onclick="currentSlide(2)" role="tab" aria-label="Ir para o slide 2" aria-selected="false"></span>
+        </div>
+    </div>
+
+    <main id="main-content" role="main" itemscope itemtype="http://schema.org/Article">
+        <meta itemprop="name" content="Cibersegurança: Proteção contra Ransomware">
+        <meta itemprop="description" content="Guia completo sobre proteção contra ransomware e extorsão digital">
+        
+        <!-- Estatísticas -->
+        <section itemscope itemtype="http://schema.org/Dataset">
+            <h2 class="section-title">Ransomware em Números</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="79">0</div>
+                    <div class="stat-label">Das empresas brasileiras já sofreram tentativas de ataque</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-prefix="R$" data-count="25">0</div>
+                    <div class="stat-label">Milhões é o custo médio de um ataque bem-sucedido</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-suffix="%" data-count="60">0</div>
+                    <div class="stat-label">Das pequenas empresas fecham após um ataque</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="3">0</div>
+                    <div class="stat-label">Horas é o tempo médio para infectar uma rede inteira</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conceito de Ransomware -->
+        <section id="conceito" class="content-section2" itemscope itemtype="http://schema.org/Article">
+            <h2>O que é Ransomware?</h2>
+            <p>Ransomware é um tipo de software malicioso (malware) que criptografa os arquivos da vítima, tornando-os
+                inacessíveis, e então exige um pagamento de resgate (geralmente em criptomoedas como Bitcoin) para
+                restaurar o acesso. É uma forma de extorsão digital que ataca indivíduos, empresas e até instituições
+                governamentais.</p>
+            <p>Os ataques de ransomware geralmente começam com técnicas de <strong>phishing</strong>, onde o criminoso
+                envia e-mails fraudulentos com anexos maliciosos ou links para sites infectados. Quando a vítima clica
+                no link ou abre o anexo, o malware é instalado no sistema e começa o processo de criptografia dos
+                arquivos.</p>
+            <p>Após a criptografia dos dados, uma mensagem de resgate é exibida, informando como realizar o pagamento
+                para recuperar o acesso aos arquivos. Em alguns casos, os criminosos também ameaçam divulgar
+                publicamente os dados sensíveis obtidos durante o ataque, uma tática conhecida como "double extortion"
+                (extorsão dupla).</p>
+        </section>
+
+        <!-- Tipos de Ransomware -->
+        <section id="tipos" class="content-section">
+            <h2>Principais Tipos de Ransomware</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-lock"></i>
+                        <h3>Crypto Ransomware</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>O tipo mais comum de ransomware, que criptografa arquivos do usuário, tornando-os
+                            inacessíveis sem a chave de descriptografia.</p>
+                        <ul>
+                            <li>Afeta documentos, planilhas, imagens e outros arquivos pessoais</li>
+                            <li>Exemplos: WannaCry, Ryuk, REvil</li>
+                            <li>Utiliza algoritmos de criptografia avançados</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-desktop"></i>
+                        <h3>Locker Ransomware</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Este tipo bloqueia o acesso ao sistema operacional ou ao dispositivo inteiro, impedindo que o
+                            usuário utilize o computador.</p>
+                        <ul>
+                            <li>Não criptografa arquivos individuais</li>
+                            <li>Geralmente mais fácil de remover que o crypto ransomware</li>
+                            <li>Frequentemente se apresenta como uma notificação oficial</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Leakware/Doxware</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Além de criptografar dados, este tipo ameaça divulgar publicamente informações sensíveis
+                            obtidas durante o ataque.</p>
+                        <ul>
+                            <li>Pressão adicional para pagar o resgate</li>
+                            <li>Particularmente perigoso para empresas com dados confidenciais</li>
+                            <li>Pode causar danos reputacionais significativos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ciclo de Ataque -->
+        <section id="ciclo" class="content-section">
+            <h2>Ciclo de Vida de um Ataque de Ransomware</h2>
+            <div class="two-column">
+                <div>
+                    <h3><i class="fas fa-envelope"></i> 1. Infecção Inicial</h3>
+                    <p>O ataque geralmente começa com um e-mail de phishing contendo um anexo malicioso ou um link para
+                        um site comprometido. Outras formas comuns de infecção incluem vulnerabilidades em sistemas sem
+                        atualização, ataques de força bruta contra serviços remotos expostos (como RDP), e instalação
+                        via outros malwares.</p>
+
+                    <h3><i class="fas fa-search"></i> 2. Reconhecimento e Persistência</h3>
+                    <p>Uma vez instalado, o ransomware mapeia a rede para encontrar arquivos valiosos e sistemas
+                        conectados. O malware estabelece mecanismos de persistência para garantir que continue
+                        funcionando mesmo após reinicializações do sistema.</p>
+
+                    <h3><i class="fas fa-network-wired"></i> 3. Propagação Lateral</h3>
+                    <p>O ransomware se espalha para outros computadores na rede, usando credenciais roubadas ou
+                        explorando vulnerabilidades. Esta fase permite maximizar o impacto do ataque, afetando o maior
+                        número possível de sistemas.</p>
+                </div>
+                <div>
+                    <h3><i class="fas fa-shield-alt"></i> 4. Desativação de Proteções</h3>
+                    <p>Para evitar detecção e remoção, o ransomware frequentemente tenta desativar softwares de
+                        segurança, serviços de backup e outras proteções do sistema antes de iniciar a criptografia.</p>
+
+                    <h3><i class="fas fa-lock"></i> 5. Criptografia de Dados</h3>
+                    <p>O ransomware criptografa arquivos importantes usando algoritmos robustos. Alguns variantes
+                        primeiro exfiltram cópias dos dados para servidores controlados pelos atacantes, antes de
+                        iniciar a criptografia.</p>
+
+                    <h3><i class="fas fa-money-bill-wave"></i> 6. Demanda de Resgate</h3>
+                    <p>Após a criptografia, uma nota de resgate é exibida com instruções para pagamento (geralmente em
+                        criptomoedas) e um prazo. A nota pode incluir ameaças adicionais de vazamento de dados ou
+                        aumento do valor do resgate.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Casos Reais -->
+        <section id="casos" class="content-section">
+            <h2>Casos Reais de Ransomware</h2>
+
+            <div class="case-study">
+                <h3>JBS Foods (2021)</h3>
+                <div class="case-study-meta">
+                    <span><i class="fas fa-industry"></i> Setor: Alimentício</span>
+                    <span><i class="fas fa-money-bill-wave"></i> Resgate: R$ 55 milhões</span>
+                </div>
+                <p>A JBS, maior empresa de processamento de carnes do mundo, com forte presença no Brasil, sofreu um
+                    ataque de ransomware que afetou suas operações nos EUA, Canadá e Austrália. A empresa pagou o
+                    equivalente a R$ 55 milhões em Bitcoin para os atacantes. O incidente forçou o fechamento temporário
+                    de várias unidades e causou disrupções na cadeia de suprimentos global de alimentos.</p>
+            </div>
+
+            <div class="case-study">
+                <h3>Tribunal de Justiça do Rio Grande do Sul (2021)</h3>
+                <div class="case-study-meta">
+                    <span><i class="fas fa-balance-scale"></i> Setor: Judiciário</span>
+                    <span><i class="fas fa-clock"></i> Tempo de recuperação: 30+ dias</span>
+                </div>
+                <p>O TJRS sofreu um ataque de ransomware que afetou seus sistemas por mais de um mês. O tribunal teve
+                    que suspender prazos processuais e audiências, causando um impacto significativo no funcionamento da
+                    justiça estadual. O incidente demonstrou a vulnerabilidade de instituições públicas brasileiras a
+                    ataques cibernéticos.</p>
+            </div>
+
+            <div class="case-study">
+                <h3>Hospital Albert Einstein (2023)</h3>
+                <div class="case-study-meta">
+                    <span><i class="fas fa-hospital"></i> Setor: Saúde</span>
+                    <span><i class="fas fa-exclamation-triangle"></i> Impacto: Moderado</span>
+                </div>
+                <p>Um dos principais hospitais do Brasil sofreu uma tentativa de ataque de ransomware que foi
+                    parcialmente contida. Graças aos protocolos de segurança implementados, o hospital conseguiu isolar
+                    parte dos sistemas afetados e minimizar o impacto nas operações clínicas. No entanto, alguns
+                    sistemas administrativos ficaram indisponíveis por cerca de uma semana.</p>
+            </div>
+        </section>
+
+        <!-- Como se Proteger -->
+        <section id="prevencao" class="content-section">
+            <h2>Como se Proteger do Ransomware</h2>
+
+            <div class="two-column">
+                <div>
+                    <h3>Para Empresas</h3>
+                    <ul>
+                        <li><strong>Backups regulares e seguros:</strong> Mantenha backups offline e testados
+                            regularmente.</li>
+                        <li><strong>Atualizações de segurança:</strong> Mantenha sistemas operacionais e softwares
+                            atualizados.</li>
+                        <li><strong>Segmentação de rede:</strong> Divida a rede em segmentos para limitar o espalhamento
+                            da infecção.</li>
+                        <li><strong>Filtros de e-mail:</strong> Implemente soluções avançadas de filtragem de e-mail
+                            para bloquear phishing.</li>
+                        <li><strong>Restrição de privilégios:</strong> Aplique o princípio do menor privilégio para
+                            limitar o acesso.</li>
+                        <li><strong>EDR/XDR:</strong> Utilize soluções de detecção e resposta avançadas.</li>
+                        <li><strong>Simulações de phishing:</strong> Treine funcionários com simulações regulares.</li>
+                        <li><strong>Plano de resposta a incidentes:</strong> Tenha um plano testado para responder a
+                            ataques.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Para Usuários Individuais</h3>
+                    <ul>
+                        <li><strong>Backups regulares:</strong> Mantenha cópias dos seus dados importantes em
+                            armazenamento externo ou na nuvem.</li>
+                        <li><strong>Atualizações de software:</strong> Mantenha seu sistema operacional e aplicativos
+                            sempre atualizados.</li>
+                        <li><strong>Cuidado com anexos:</strong> Não abra anexos de e-mails suspeitos ou de remetentes
+                            desconhecidos.</li>
+                        <li><strong>Verifique URLs:</strong> Antes de clicar em links, verifique se o endereço web é
+                            legítimo.</li>
+                        <li><strong>Use antivírus/antimalware:</strong> Mantenha um software de proteção atualizado.
+                        </li>
+                        <li><strong>Autenticação em duas etapas:</strong> Ative para suas contas online importantes.
+                        </li>
+                        <li><strong>Desconfie de solicitações urgentes:</strong> Ataques frequentemente criam senso de
+                            urgência.</li>
+                        <li><strong>Evite software pirata:</strong> Aplicativos não oficiais são vetores comuns de
+                            malware.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ferramentas e Recursos -->
+        <section id="ferramentas" class="content-section">
+            <h2>Ferramentas e Recursos de Proteção</h2>
+            <div class="resources-container">
+                <div class="resource-item">
+                    <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
+                    <h3>Guia de Resposta a Ransomware</h3>
+                    <p>Manual completo com passos para prevenir, detectar e responder a ataques de ransomware.</p>
+                    <a href="downloads/guia-ransomware.pdf" class="download-btn" title="Em breve">Download PDF</a>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <h3>Checklist de Segurança</h3>
+                    <p>Lista de verificação para avaliar as proteções contra ransomware na sua organização.</p>
+                    <a href="downloads/checklist-seguranca.pdf" class="download-btn" title="Em breve">Download
+                        Checklist</a>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Kit de Treinamento</h3>
+                    <p>Material para conscientização dos funcionários sobre ameaças digitais.</p>
+                    <a href="downloads/kit-treinamento.zip" class="download-btn" title="Em breve">Acessar Kit</a>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Ferramenta de Diagnóstico</h3>
+                    <p>Software para avaliar vulnerabilidades que possam ser exploradas por ransomware.</p>
+                    <a href="downloads/ferramenta-diagnostico.zip" class="download-btn" title="Em breve">Download
+                        Ferramenta</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="content-section">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Devo pagar o resgate se for infectado por ransomware?</div>
+                    <div class="faq-answer">
+                        <p>As autoridades de segurança geralmente recomendam não pagar o resgate, pois isso financia
+                            atividades criminosas e não garante a recuperação dos dados. Além disso, empresas que pagam
+                            podem se tornar alvos para futuros ataques. É melhor investir em backups seguros e medidas
+                            preventivas.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Como posso saber se o e-mail que recebi é uma tentativa de phishing?</div>
+                    <div class="faq-answer">
+                        <p>Verifique o endereço de e-mail do remetente (não apenas o nome de exibição), desconfie de
+                            erros gramaticais, solicitações urgentes ou inesperadas, links suspeitos e pedidos de
+                            informações confidenciais. Passe o mouse sobre links para ver o URL real sem clicar. Em caso
+                            de dúvida, contate diretamente a organização supostamente emissora por um canal oficial.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Quais são os principais sinais de que um computador está infectado por
+                        ransomware?</div>
+                    <div class="faq-answer">
+                        <p>Os sinais incluem: arquivos que não abrem ou têm extensões estranhas, mensagem de resgate na
+                            tela, atividade incomum no disco rígido, lentidão extrema do sistema, arquivos desaparecidos
+                            ou renomeados, e impossibilidade de acessar certos diretórios. Se você notar qualquer desses
+                            sinais, desconecte imediatamente o dispositivo da rede para evitar a propagação.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Com que frequência devo fazer backup dos meus dados?</div>
+                    <div class="faq-answer">
+                        <p>A frequência ideal depende de quanto conteúdo novo você gera e quão críticos são seus dados.
+                            Para uso pessoal, um backup semanal pode ser suficiente. Para empresas, backups diários (ou
+                            mais frequentes) são recomendados para dados críticos. Siga a regra 3-2-1: mantenha pelo
+                            menos 3 cópias dos seus dados, em 2 tipos diferentes de mídia, com 1 cópia armazenada
+                            off-site.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">O seguro cibernético cobre ataques de ransomware?</div>
+                    <div class="faq-answer">
+                        <p>Muitas apólices de seguro cibernético cobrem incidentes de ransomware, incluindo custos de
+                            recuperação, investigação forense, interrupção de negócios e, em alguns casos, até o
+                            pagamento do resgate. No entanto, as coberturas variam significativamente entre seguradoras,
+                            e algumas estão começando a limitar a cobertura para ransomware devido ao aumento dos
+                            ataques. É essencial ler cuidadosamente os termos da apólice e entender as exclusões.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Área de Comentários -->
+        <section id="comentarios" class="content-section">
+            <h2>Comentários</h2>
+
+            <form id="comment-form">
+                <div class="form-group">
+                    <label for="comentario-nome">Nome</label>
+                    <input type="text" id="comentario-nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="comentario-texto">Comentário</label>
+                    <textarea id="comentario-texto" rows="4" required></textarea>
+                    <div class="emoji-bar">
+                        <button type="button" class="emoji-btn" onclick="insertEmoji('😀')">😀</button>
+                        <button type="button" class="emoji-btn" onclick="insertEmoji('😡')">😡</button>
+                        <button type="button" class="emoji-btn" onclick="insertEmoji('👍')">👍</button>
+                        <button type="button" class="emoji-btn" onclick="insertEmoji('👎')">👎</button>
+                        <button type="button" class="emoji-btn" onclick="insertEmoji('💡')">💡</button>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Enviar Comentário</button>
+            </form>
+
+            <div id="comentarios-lista"></div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato" class="content-section">
+            <h2>Entre em Contato</h2>
+            <p>Tem dúvidas sobre segurança cibernética? Precisa de consultoria especializada para sua empresa? Entre em
+                contato conosco:</p>
+
+            <form id="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}"
+                            title="Digite um número de telefone válido">
+                    </div>
+                    <div class="form-group">
+                        <label for="empresa">Empresa</label>
+                        <input type="text" id="empresa" name="empresa">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="assunto">Assunto</label>
+                    <select id="assunto" name="assunto" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="consultoria">Consultoria em Segurança</option>
+                        <option value="treinamento">Treinamento para Equipe</option>
+                        <option value="incidente">Resposta a Incidente</option>
+                        <option value="duvida">Dúvida Técnica</option>
+                        <option value="outro">Outro Assunto</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
+
+                <div id="form-feedback">Por favor, preencha todos os campos obrigatórios.</div>
+
+                <button type="submit" class="submit-btn">Enviar Mensagem</button>
+            </form>
+        </section>
+
+        <!-- Campus FB -->
+        <section id="campus" class="content-section" itemscope itemtype="http://schema.org/EducationalOrganization">
+            <h2>Campus de Francisco Beltrão e Curso</h2>
+            <p>Na cidade conhecida como o "Coração do Sudoeste do Paraná", encontra-se a mais recente unidade da
+                Universidade Paranaense (Unipar), que iniciou suas atividades em 23 de outubro de 2000. Esta é a sexta
+                unidade fora de Umuarama, cidade-sede da instituição. O campus de Francisco Beltrão, importante polo
+                regional com aproximadamente 750 mil habitantes, teve suas atividades acadêmicas efetivamente iniciadas
+                em 2001.</p>
+            <p>Assim como as demais unidades da Unipar, o campus de Francisco Beltrão cresceu além das expectativas dos
+                gestores, o que resultou em investimentos contínuos e significativos ao longo dos anos.</p>
+            <p>Atualmente, conta com cerca de 15 mil metros quadrados de área construída, atendendo a mais de vinte
+                cursos de graduação e pós-graduação, todos estruturados com projetos pedagógicos modernos e alinhados à
+                realidade regional. Os espaços acadêmicos incluem laboratórios e ambientes especializados, que oferecem
+                suporte às aulas práticas, projetos de pesquisa e ações de extensão universitária.</p>
+
+            <p>Entre os destaques da infraestrutura, estão:</p>
+
+            <li>Biblioteca com acervo de aproximadamente 30 mil livros;</li>
+
+            <li>Tribunal para júri simulado;</li>
+
+            <li>SAJUG (Serviço de Assistência Judiciária Gratuita);</li>
+
+            <li>CIAPE (Centro Integrado de Apoio a Projetos Empresariais);</li>
+
+            <li>Clínica de Nutrição;</li>
+
+            <li>LAC (Laboratório de Análises Clínicas).</li>
+
+            <p>Nosso grupo é composto por alunos do primeiro período do curso de Análise e Desenvolvimento de Sistemas,
+                e o tema do nosso trabalho é Cibersegurança.</p>
+
+            <p>Nosso principal objetivo é conscientizar a comunidade sobre as ameaças digitais, com foco especial em
+                ransomware e extorsão digital. Nossa missão é fornecer informações atualizadas, ferramentas práticas e
+                orientações especializadas que ajudem pessoas e organizações a se protegerem nesse cenário digital cada
+                vez mais complexo e desafiador.</p>
+
+            <p>Trabalhamos em parceria com professores e turmas avançadas do curso para desenvolver e disseminar as
+                melhores práticas de cibersegurança, contribuindo ativamente para um ambiente digital mais seguro e
+                resiliente.</p>
+        </section>
+
+        <!-- Newsletter Container -->
+        <div class="newsletter-wrapper">
+            <!-- Newsletter Section -->
+            <section class="newsletter" id="newsletter">
+                <div class="newsletter-container">
+                    <h2>Mantenha-se informado</h2>
+                    <p>Receba alertas de segurança, dicas de proteção e notícias sobre novas ameaças diretamente no seu
+                        e-mail.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Seu e-mail" required>
+                        <button type="submit" class="newsletter-btn">Inscrever-se</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- Floating Form Container -->
+        <div class="floating-form-wrapper">
+            <div class="form-container">
+                <button class="close-button" onclick="toggleForm()"><i class="fas fa-times"></i></button>
+                <h3>Precisa de ajuda?</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="quick-nome">Nome</label>
+                        <input type="text" id="quick-nome" name="quick-nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quick-email">E-mail</label>
+                        <input type="email" id="quick-email" name="quick-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quick-mensagem">Como podemos ajudar?</label>
+                        <textarea id="quick-mensagem" name="quick-mensagem" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar</button>
+                </form>
+            </div>
+
+            <!-- Botão Flutuante -->
+            <button class="float-button" onclick="toggleForm()"><i class="fas fa-headset"></i></button>
+        </div>
+
+        <!-- Footer -->
+        <footer role="contentinfo">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Sobre nós</h3>
+                    <p>Somos um grupo de universitários dedicados a conscientizar e educar sobre ameaças cibernéticas,
+                        especialmente
+                        ransomware e extorsão digital.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <ul class="footer-links">
+                        <li><a href="#conceito">O que é Ransomware</a></li>
+                        <li><a href="#prevencao">Como se Proteger</a></li>
+                        <li><a href="#ferramentas">Recursos e Ferramentas</a></li>
+                        <li><a href="#casos">Casos Reais</a></li>
+                        <li><a href="#faq">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog de Segurança</a></li>
+                        <li><a href="#">Webinars Gratuitos</a></li>
+                        <li><a href="#">Alertas de Ameaças</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> contato@ciberseguranca.com.br</li>
+                        <li><i class="fas fa-phone"></i> +55 (46) 99876-5432</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Francisco Beltrão, PR - Brasil</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Cibersegurança Educacional. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+        <noscript>
+            <div class="noscript-message">
+                Para uma melhor experiência, por favor habilite o JavaScript no seu navegador.
+            </div>
+        </noscript>
+
+        <script src="scripts/script.js" defer></script>
+</body>
+
+</html>

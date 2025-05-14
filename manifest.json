@@ -1,0 +1,17 @@
+{
+  "name": "CiberSec - Educação em Cibersegurança",
+  "short_name": "CiberSec",
+  "description": "Portal educativo sobre cibersegurança, ransomware e proteção digital",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a23",
+  "theme_color": "#0a0a23",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3208/3208742.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+} 
